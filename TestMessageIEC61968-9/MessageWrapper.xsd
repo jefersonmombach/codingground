@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="http://iec.ch/TC57/2011/schema/message" schemaLocation="Message.xsd" />
+    <import namespace="http://iec.ch/TC57/2011/MeterReadings#" schemaLocation="MeterReadings.xsd" />
+</schema>
