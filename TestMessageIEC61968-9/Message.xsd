@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2016/06/16 XSD baseado na IEC 61970 e IEC 61968-9 Editado por Jeferson Mombach para as necessidades da Sanepar -->
+<xs:schema xmlns="http://iec.ch/TC57/2011/schema/message"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://iec.ch/TC57/2011/schema/message"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0.0">
+	<xs:element name="RequestMessage" type="RequestMessageType">
+	</xs:element>
+	<xs:complexType name="PayloadType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+				</xs:any>
+			</xs:choice>
+			<xs:element name="Format" type="xs:string" minOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HeaderType">
+		<xs:sequence>
+			<xs:element name="Verb">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="created" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Noun" type="xs:string">
+			</xs:element>
+			<xs:element name="Revision" type="xs:string" minOccurs="1">
+			</xs:element>
+			<xs:element name="Context" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="PRODUCTION" />
+						<xs:enumeration value="TESTING" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestMessageType">
+		<xs:sequence>
+			<xs:element name="Header" type="HeaderType" />
+			<xs:element name="Payload" type="PayloadType" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
