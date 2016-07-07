@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RequestMessage xmlns="http://iec.ch/TC57/2011/schema/message" xmlns:ns1="http://iec.ch/TC57/2011/MeterReadings#">
+   <Header>
+      <Verb>created</Verb>
+      <Noun>MeterReadings</Noun>
+      <Revision>1.0.0</Revision>
+      <Context>TESTING</Context>
+   </Header>
+   <Payload>
+      <ns1:MeterReadings>
+         <ns1:MeterReading>
+            <ns1:CustomerAgreement>
+               <ns1:mRID>022-0000000001</ns1:mRID>
+            </ns1:CustomerAgreement>
+            <ns1:Readings>
+               <ns1:timeStamp>2016-02-01T12:00:00.000Z</ns1:timeStamp>
+               <ns1:value>100.0</ns1:value>
+               <ns1:ReadingType ref="1" />
+            </ns1:Readings>
+            <ns1:Readings>
+               <ns1:timeStamp>2016-02-01T12:00:00.000Z</ns1:timeStamp>
+               <ns1:value>200.0</ns1:value>
+               <ns1:ReadingType ref="2" />
+            </ns1:Readings>
+            <ns1:ServiceDeliveryPoint>
+               <ns1:mRID>025-000000000001</ns1:mRID>
+            </ns1:ServiceDeliveryPoint>
+         </ns1:MeterReading>
+         <ns1:ReadingType>
+            <ns1:mRID>1</ns1:mRID>
+            <ns1:name>Total de Consumo em kWh da Hora</ns1:name>
+            <ns1:unit>Kwh</ns1:unit>
+         </ns1:ReadingType>
+         <ns1:ReadingType>
+            <ns1:mRID>2</ns1:mRID>
+            <ns1:name>Consumo em kWh da hora em ponta</ns1:name>
+            <ns1:unit>Kwh</ns1:unit>
+         </ns1:ReadingType>
+      </ns1:MeterReadings>
+      <Format>XML</Format>
+   </Payload>
+</RequestMessage>
